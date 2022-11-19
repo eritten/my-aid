@@ -16,4 +16,5 @@ class Profile(models.Model):
     about = models.TextField(null=True, blank=True)
     profile_picture = models.ImageField(upload_to='profile images', null=True, blank=True)
     def __str__(self):
-        return self.display_name
+        return self.user.username
+

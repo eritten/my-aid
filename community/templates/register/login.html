@@ -1,0 +1,26 @@
+{% extends "base_user.html" %}
+{% block content %}
+<h1>Login to your dashboard</h1>
+
+
+
+<form action="{% url 'login_user' %}" method="POST">
+{% csrf_token %}
+<input type="text" name="name" placeholder="Username required / Email" />
+<br/>
+<input type="password" placeholder="Password" name="password" required />
+<br/>
+<input type="submit" value="LOGIN" />
+</form>
+{% for message in messages %}
+{{message}}.
+Create account if you do not have one.
+<a href="{% url 'volunteer' %}">As volunteer</a>
+<br/>
+<a href="{% url 'disable' %}">As disable</a>
+
+{% endfor %}
+<br/>
+
+
+{% endblock %}

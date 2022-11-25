@@ -1,0 +1,12 @@
+<h1>Welcome {{request.user.username}}</h1>
+<a href="{% url 'logout_user' %}">LOGOUT</a>
+{% if is_activated %}
+<h1>activated</h1>
+{% else %}
+<h1>not activated</h1>
+<p>Update your profile <br/>
+<a href="{% url 'create_profile' %}">Update profile</a>
+
+
+
+{% endif %}

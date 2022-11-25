@@ -15,7 +15,7 @@ class Profile(models.Model):
     city = models.CharField(max_length=200, null=True, blank=True)
     country = models.CharField(max_length=200, null=True, blank=True)
     sex = models.CharField(max_length=10, choices=(('male', 'male'), ('female', 'female')), null =True, blank=True)
-    is_disable = models.BooleanField(default=False)
+    status = models.CharField(max_length=50, choices=(('disable', 'disable'), ('volunteer', 'volunteer')))
     display_name = models.CharField(max_length=200, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
     occupation = models.CharField(max_length=200, null=True, blank=True)

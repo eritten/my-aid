@@ -1,9 +1,107 @@
 {% extends "base_home.html" %}
 {% block content %}
-<h1>Home page</h1>
-<br/>
-<br/>
+<main class="home-page">
+<!-- welcome header -->
+<div class="img-bg-section">
+      
+    <div class="container">
+      <div class="row align-items-center header-row">
+        <div class="col-lg-5">
 
-<button onclick="window.open('http://localhost:8000/app/create-account')">Create Account</button>
+          <div class="shadow p-5 header-box">
+            <div class="block-heading-1">
+              <span class="d-block mb-3">Welcome To sewonet</span>
+              <h1 class="mb-4 blue display-4">We Care For people with disabilities</h1>
+            </div>
+            
+            <p class="mb-4" style="line-height: 1.7;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet quod modi, eius minus hic illum perspiciatis! Voluptate facere tempore, libero enim fugit, temporibus non dolor nostrum iure ad. Dolorem, explicabo!</p>
+            <p><a href="#" class="btn btn-primary text-white py-3 px-5">Contact Us</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- end of welcome header -->
+<!-- services section -->
+<div class="site-section block-feature-1-wrap" id="services-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="block-heading-1">
+            <span>All Kind Of Services</span>
+            <h2>Dental Services</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row ps">
+        <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up">
+          <div class="block-feature-1">
+            <span class="icon">
+              <span class="fas fa-blind img"></span>
+            </span>
+            <h2 class="text-black">blind people</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum suscipit quo quae</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="100">
+          <div class="block-feature-1">
+            <span class="icon">
+                <span class="fas fa-wheelchair img"></span>
+            </span>
+            <h2 class="text-black">crippled people</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum suscipit quo quae</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="block-feature-1">
+            <span class="icon">
+                <span class="fas fa-crutch img"></span>
+            </span>
+            <h2 class="text-black">people with crutches</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum suscipit quo quae</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up">
+          <div class="block-feature-1">
+            <span class="icon" tabindex="0" aria-label="headphones image">
+                <span class="fas fa-headphones img"></span>
+            </span>
+            <h2 class="text-black">hearing impairement</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum suscipit quo quae</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="100">
+          <div class="block-feature-1">
+            <span class="icon" tabindex="0" aria-label="microphone image">
+                <span class="fas fa-microphone img"></span>
+            </span>
+            <h2 class="text-black">speech impairement</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum suscipit quo quae</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="block-feature-1">
+            <span class="icon">
+                <span class="fas fa-blind img"></span>
+            </span>
+            <h2 class="text-black">Patient Records</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum suscipit quo quae</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- end of services section -->
+</main>
+
+
 
 {% endblock %}

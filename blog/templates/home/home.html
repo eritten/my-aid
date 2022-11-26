@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load tag %}
+{% block title %}
+MyAid Blog
+{% endblock %}
+{% block content %}
+
+  <main class="mh-100 home-main">
+    <!-- header banner -->
+    <header>
+      <div class="header-wrapper">
+        <div class="content-wrapper" data-aos="fade-left">
+          <p style="font-size: 3rem; font-family: Arial, Helvetica, sans-serif;">BB Page is a blogging site that delivers latest news and the talk of the town.</p>
+          <a href="#about" style="color: #fff!important; font-size: 2rem;" class="btn btn-dark">Read more</a>
+        </div>
+      </div>
+    </header>
+    <!-- images display -->
+    <div class="main-img-container">
+      <!-- start -->
+      <div class="img-box">
+        <img src="{% static 'img/pic-1.jpg' %}" alt="image display">
+        <div class="text-box">
+          <p>Love African</p>
+        </div>
+      </div>
+      <!-- end -->
+      <!-- start -->
+      <div class="img-box">
+        <img src="{% static 'img/pic-2.jpg' %}" alt="image display">
+        <div class="text-box">
+          <p>Love African</p>
+        </div>
+      </div>
+      <!-- end -->
+      <!-- start -->
+      <div class="img-box">
+        <img src="{% static 'img/pic-3.png' %}" alt="image display">
+        <div class="text-box">
+          <p>Love African</p>
+        </div>
+      </div>
+      <!-- end -->
+      <!-- start -->
+      <div class="img-box">
+        <img src="{% static 'img/pic-4.jpg' %}" alt="image display">
+        <div class="text-box">
+          <p>Love African</p>
+        </div>
+      </div>
+      <!-- end -->
+      <!-- start -->
+      <div class="img-box">
+        <img src="{% static 'img/pic-5.jpg' %}" alt="image display">
+        <div class="text-box">
+          <p>Love African</p>
+        </div>
+      </div>
+      <!-- end -->
+    </div>
+    <!-- end of images display -->
+<!-- about section -->
+<section class="about" id="about">
+  <div class="section-wrapper" style="font-size: 1.8rem;">
+    <h2 class="display-4 text-center mb-5">ABOUT US</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident temporibus quos nemo doloribus nobis impedit, maiores, dignissimos atque optio expedita maxime dolores, inventore explicabo repudiandae quas repellat libero exercitationem suscipit!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur provident mollitia vel, enim animi similique autem explicabo saepe beatae temporibus? Officia quaerat qui quis nemo sunt pariatur magni eum! Quae.
+    Nemo facilis voluptatum beatae veniam ratione, maxime sapiente error iure. Nulla, a id! Minima totam unde, laboriosam maxime optio, non sunt reprehenderit, saepe blanditiis sit minus enim! Commodi, magni libero.
+    Eveniet consequatur esse rerum quaerat, rem dolorem sequi, fugiat odit, numquam unde consectetur neque id beatae? Ducimus vero, cumque sunt excepturi omnis, quos dolorem quia debitis obcaecati eos, laudantium minima!
+    Incidunt veritatis aliquam quo ea assumenda sapiente odit nulla sunt perspiciatis fugit alias minus corrupti iste sed saepe quisquam, repudiandae eveniet deleniti eaque. Nesciunt illum veniam nobis ipsam magnam? Natus!
+    Laboriosam sapiente itaque corrupti? Debitis, repellat! Quod eius deleniti architecto fugiat tempore eum magnam, est possimus omnis tempora sint quisquam! Quisquam commodi nam natus soluta itaque officia dolorum sapiente animi.</p>
+  </div>
+</section>
+<!-- end of about section -->
+    <!-- features section -->
+    <section class="features" id="features">
+      <div class="section-wrapper">
+        <div class="main-blog-container">
+          <div class="main-blog-wrapper">
+            <div class="blog-recent">
+              <h3 class="display-4 text-center mb-5">Editor's pick</h3>
+                {% show_latest_posts 12 %}
+            </div>
+          </div>
+           <!-- sidebar -->
+          <div id="sidebar">
+            <!-- tags -->
+            <div class="tags">
+              <p class="display-4">Categories:</p>
+              <div class="tags-wrapper">
+              {% for tag in tags_all %}
+                  <a href="{% url 'post_list_by_tag' tag.slug %}" aria-label="category link {{ tag.name }}">
+                    {{ tag.name }}
+                  </a>
+                  {% endfor %}
+              </div>
+            </div>
+            <!-- end of tags -->
+            <!-- bb page's logo and info display -->
+            <div class="blogger-info-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="img-box">
+                <img src="{% static 'img/logo2.jpg' %}" alt="logo of bb page">
+              </div>
+              <p>Hello precious one, we are content writers who are into blogging, commercials and anything Entertainment. We help clients bring contend to the right people.</p>
+              <div class="icons-box">
+                <a href="#n" aria-label="youtube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#n" aria-label="twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#n" aria-label="facebook">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </div>
+            </div>
+            <!-- end of bb page's logo and info display -->
+            <h3>Most commented posts</h3>
+            {% get_most_commented_posts as most_commented_posts %}
+            <ul class="most-commented-wrapper">
+              {% for post in most_commented_posts %}
+                <li class="bg-light" data-aos="fade-up" data-aos-delay="300">
+
+                  <a href="{{ post.get_absolute_url }}">
+                    <div class="img-box">
+                      <img src="{{post.image.url}}" alt="">
+                    </div>
+                    <div class="text-box">
+                      <p class="blog-title">{{ post.title }}</p>
+                      <p class="comment-text">{{ post.text }}</p>
+                    </div>
+                  </a>
+                  <p class="time-uploaded">posted {{post.created_at|ago}}</p>
+                  
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <!-- end of sidebar -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- end of features section -->
+    <!-- contact us section -->
+    <section class="contact" id="contact">
+      <h2 class="section-title">contact us</h2>
+      <div class="section-wrapper">
+        <div class="contact-wrapper">
+          <div class="img-box" data-aos="fade-right">
+            <img src="{% static 'img/logo1.jpg' %}" alt="bb page drawing image">
+          </div>
+          <div class="contact-form-container" data-aos="fade-left">
+            <form action="{% url 'home' %}" class="bg-light" method="POST">
+              {% csrf_token %}
+              <input type="text" name="username" placeholder="enter your name" required>
+              <input type="email" name="email" placeholder="enter your email" required>
+              <textarea name="msg" maxlength="500" placeholder="enter your message" required></textarea>
+              <input type="submit" value="send message">
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of contact us section -->
+    <style>
+      /* contact message alert */
+      
+  #alert-msg {
+      box-shadow: var(--box-shadow-out);
+      padding: 2rem;
+      position: fixed;
+      top: 5rem;
+      left: 50%;
+      min-width: 60%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      z-index: 20000000;
+    border-radius: 6px;
+  }
+  #alert-msg .close-msg-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  /* end of contact message alert */
+    </style>
+    {% for message in messages %}
+    <!-- alert to display when contact message is sent -->
+    <div id="alert-msg" role="alert">
+      <strong style="color: rgb(58, 57, 56);">Your message has been sent</strong> 
+      <p class="mt-3 mr-2">{{message}}</p>
+      <p>We will reply you via your mail. </p>
+      <button type="button" class="close-msg-btn" aria-label="Close button">
+        <span class="fas fa-times" aria-hidden="true"></span>
+      </button>
+    </div>
+    <!-- end of alert when contact message is sent -->
+    {% endfor %}
+
+    <!-- script for the close button when contact message alert is displayed -->
+    <script>
+      const msgAlertBx = document.querySelector("#alert-msg")
+      const msgAlertCloseBtn = document.querySelector("#alert-msg .close-msg-btn")
+
+      msgAlertCloseBtn.addEventListener("click", closeAlertBox)
+
+      function closeAlertBox() {
+        msgAlertBx.style.display = "none"
+      }
+      // message should disappear after 6 secs
+      setTimeout(() => {
+        closeAlertBox()
+      }, 6000);
+    </script>
+  </main>
+
+
+{% endblock %}

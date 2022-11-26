@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load tag %}
+
+{% block title %}My Blog{% endblock %}
+
+{% block content %}
+  <section class="search-results">
+    <div class="section-wrapper">
+      <h1 class="my-5 text-center">My Blog</h1>
+      <div class="post-wrapper">
+        {% if tag %}
+          <h2>Posts tagged with "{{ tag.name }}"</h2>
+        {% endif %}
+        {% for post in page_obj %}
+          <div>
+            <p>Posted {{post.created_at|ago}}</p>
+            <h2 class="display-4 font-weight-bold mb-5">
+              <a href="{{ post.get_absolute_url }}">
+                {{ post.title }}
+              </a>
+            </h2>
+            <div class="post-item-wrapper shadow py-5 px-2 mb-5" data-aos="fade-up">
+              <div class="img-box">
+                <img src="{{post.image.url}}" alt="">
+              </div>
+                        
+                      <p class="mt-5">{{post.text|markdown|truncatewords_html:100}} <a href="{{ post.get_absolute_url }}">Read more...</a></p>
+                      {% empty %}
+                      <p>No search results</p>
+                      
+                      {% endfor %}
+              </div>
+          </div>
+      </div>
+      {% include "pagination.html" with page=page_obj %}
+    </div>
+  </section>
+
+{% endblock %}

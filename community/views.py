@@ -8,13 +8,16 @@ from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 def check_profile(u):
-    return not(Profile.objects.get(user__username=u.username).create_profile)
+    if not(Profile.objects.filter(user__username=u.username).exists()):
+            return True
+    return not(Profile.objects.filter(user__username=u.username)[0].create_profile)
+
 
 @login_required
 @user_passes_test(check_profile)
 def create_profile(request):
     form = CreateProfile()
-    if request.method == "POST":
+    if request.method == "POST": 
         form = CreateProfile(request.POST, request.FILES)
         if form.is_valid():
             profile = form.save(commit=False)
@@ -49,7 +52,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             return redirect('dashboard')
-        messages.success(request, "Login failed")
+        messages.error(request, "Login failed")
         return render(request, "register/login.html")
 
     else:
@@ -59,10 +62,16 @@ def login_user(request):
 
 @login_required
 def dashboard(request):
-    is_activated = Profile.objects.filter(user__username=request.user.username)
+    is_activated = None
+    try:
+        is_activated = Profile.objects.filter(user__username=request.user.username)[0]
+    except:
+        pass
+
     return render(request, 'dashboard/dashboard.html', {'is_activated': is_activated})
+
 
 @login_required
 def logout_user(request):
     logout(request)
-    return render(request, 'logout.html')
+    return render(request, 'register/logout.html')

@@ -1,0 +1,15 @@
+<ul class="latest-post-wrapper">
+  {% for post in latest_posts %}
+    <li class="shadow">
+      <a href="{{ post.get_absolute_url }}">
+        <div class="img-box">
+          <img src="{{post.image.url}}" alt="">
+        </div>
+        <div class="text-wrapper">
+          <p class="latest-post-title">{{ post.title }}</p>
+          <p class="post-text" id="post-text">{{ post.text }}</p>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

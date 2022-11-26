@@ -1,7 +1,11 @@
 <h1>Welcome {{request.user.username}}</h1>
 <a href="{% url 'logout_user' %}">LOGOUT</a>
 {% if is_activated %}
-<h1>activated</h1>
+{% if is_activated.status == 'volunteer' %}
+<p>Please click here to choose type of volunteer you are</p>
+{% else %}
+<p>choose disability type here</p>
+{% endif %}
 {% else %}
 <h1>not activated</h1>
 <p>Update your profile <br/>

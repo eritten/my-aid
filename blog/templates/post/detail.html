@@ -1,0 +1,63 @@
+
+{% extends "base.html" %}
+{% load embed_video_tags %}
+{% load tag %}
+{% load comment_tags %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+  <main class="details-container">
+    <section class="details-of-post">
+      <div class="section-wrapper">
+        <div class="post-title-wrapper mb-5">
+          <h1>{{ post.title }}</h1>
+        </div>
+        <p class="date">
+          Published {{ post.created_at|ago }} by {{ post.author }}
+        </p>
+        <p>{{post.text|read_time}}</p>
+        <div class="post-details-wrapper">
+          <div class="img-box" data-aos="fade-left">
+            <img src="{{post.image.url}}" alt="">
+          </div>
+          <p class="main-post-detail">
+            {{ post.text|markdown }}
+          </p>
+          <div class="video-box">
+         {% video post.video_url "small" %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="recom-and-comment">
+      <div class="section-wrapper">
+        <div class="comments-wrapper">
+          <!-- deleted codes start here -->
+          
+          <!-- deleted codes end here -->
+        </div>
+          <div class="recom-wrapper shadow py-4 px-3">
+            <h2 class="display-4 text-center mb-3">Similar posts:</h2>
+            {% for post in similar_posts %}
+                <a href="{{ post.get_absolute_url }}" class="bg-light shadow similar-link mb-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="img-box">
+                    <img src="{{post.image.url}}" alt="">
+                  </div>
+                  <p class="similar-title">
+                    {{ post.title }}
+                  </p>
+                </a>
+            {% empty %}
+              No similar posts yet.
+            {% endfor %}
+          </div>
+      </div>
+
+    </section>
+    <h3 class="lead text-center">Leave a comment</h3>
+    {% render_comments post  request %}  
+          {% include_bootstrap %} {# Include bootstrap 4.1.1 - remove this line if BS is already used in your project #}
+  </main>
+
+{% endblock %}

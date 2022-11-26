@@ -31,10 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-'community',
-'home',
+'homepage',
 'blog',
-    'django.contrib.admin',
+'markdownfield',
+'embed_video',
+'comment',
+'taggit',
+'community',
+'corsheaders',
+'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -45,6 +50,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -53,11 +60,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'myaid.urls'
+CORS_ALLOW_ALL_ORIGINS = True
+
+import os
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'static')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,3 +140,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/app/dashboard/'
 LOGIN_URL = '/app/login/'
+LOGOUT_URL = '/app/logout/'
+LOGOUT_REDIRECT_URL = '/app/logout/'

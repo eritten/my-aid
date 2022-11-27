@@ -2,11 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-VOLUNTEER_TYPE = (('GENRAL', 'GENERAL'), ('HEALTH', 'HEALTH'), ('BANKING', 'BANKING'), ('LEGAL RIGHT', 'LEGAL RIGHT'), ('MESSENGER', 'MESSENGER'), ('COUNCELLER', 'COUNCELLER'), ('TRANSPORT', 'TRANSPORT'))
+VOLUNTEER_TYPE = (("not a volunteer", "not a volunteer"), ('GENRAL', 'GENERAL'), ('HEALTH', 'HEALTH'), ('BANKING', 'BANKING'), ('LEGAL RIGHT', 'LEGAL RIGHT'), ('MESSENGER', 'MESSENGER'), ('COUNCELLER', 'COUNCELLER'), ('TRANSPORT', 'TRANSPORT'))
 DISABILITY_TYPE = (("VISUALLY IMPAIRMENT", "VISUALLY IMPAIRMENT"), ("PHYSICALLY CHALLENGE", "PHYSICALLY CHALLENGE"),
 ("DEAF AND DAM", "DEAF AND DAM"),
-("DOWN SYNDROME", "DOWN SYNDROME")
-) 
+("DOWN SYNDROME", "DOWN SYNDROME"),
+("No disability", "No disability")) 
 
 
 class Profile(models.Model):

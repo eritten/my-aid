@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class CreateProfile(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['display_name', 'sex', 'date_of_birth', 'occupation', 'profile_picture', 'about', 'city', 'country', 'telephone_number', 'status']
+        fields = ['display_name', 'sex', 'date_of_birth', 'occupation', 'profile_picture', 'about', 'city', 'country', 'telephone_number', 'status', 'volunteer_type', 'disability_type']
 
 class UserForm(forms.ModelForm):
     class Meta:

@@ -1,4 +1,7 @@
 {% extends "base_user.html" %}
+{% block title %}
+Login 
+{% endblock %}
 {% block content %}
 <h1>Login to your dashboard</h1>
 
@@ -15,12 +18,8 @@
 {% for message in messages %}
 {{message}}.
 Create account if you do not have one.
-<a href="{% url 'volunteer' %}">As volunteer</a>
 <br/>
 <a href="{% url 'disable' %}">As disabled</a>
 
 {% endfor %}
-<br/>
-
-
 {% endblock %}

@@ -3,24 +3,41 @@
 Login 
 {% endblock %}
 {% block content %}
-<h1>Login to your dashboard</h1>
 
-
-
-<form action="{% url 'login_user' %}" method="POST">
-{% csrf_token %}
-<input type="text" name="name" placeholder="Username required / Email" />
-<br/>
-<input type="password" placeholder="Password" name="password" required />
-<br/>
-<input type="submit" value="LOGIN" />
-<button >Reset password</button>
-</form>
-{% for message in messages %}
-{{message}}.
-Create account if you do not have one.
-<br/>
-<a href="{% url 'disable' %}">As disabled</a>
-
-{% endfor %}
+<!-- login form -->
+<section class="login-form-section">
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="box">
+      <div class="circle" style="--i:0"></div>
+      <div class="circle" style="--i:1"></div>
+      <div class="circle" style="--i:2"></div>
+      <div class="circle" style="--i:3"></div>
+      <div class="circle" style="--i:4"></div>
+      <div class="container">
+        <div class="form">
+          <h2>Login Form</h2>
+          <form class="login-form" action="{% url 'login_user' %}" method="POST">
+    {% csrf_token %}
+            <div class="inputBox">
+              <input type="text"  name="name" placeholder="username" required>
+            </div>
+            <div class="inputBox">
+              <input type="password" placeholder="password" name="password" required>
+            </div>
+            <div class="inputBox">
+              <input type="submit" value="LOGIN">
+            </div>
+            <p class="forget">forgot password? <a href="#n">click here</a></p>
+            <p class="forget">don't have an account? <a href="#n">sign up</a></p>
+          </form>
+          {% for message in messages %}
+        {{message}}.
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- end of login form -->
 {% endblock %}

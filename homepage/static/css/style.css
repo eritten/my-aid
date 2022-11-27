@@ -44,11 +44,14 @@ body {
 .ttu {
     text-transform: uppercase;
 }
+.fz-2 {
+    font-size: 1.8rem;
+}
 .img-bg-section {
     background: url(../img/dis-2.jpg);
     background-repeat: no-repeat;
-    background-position: right;
-    background-size: cover;
+    background-size: 1200px;
+    background-position: right bottom;
 }
 .header-box {
     background: white;
@@ -89,6 +92,7 @@ video {
 }
 @media (max-width: 768px) {
     .img-bg-section {
+        background-size: cover;
         background-position: center center;
     }
     .ps {

@@ -17,7 +17,108 @@
           </div>
        
         {% endif %}
+        {% if is_activated.status == 'volunteer' %}
+                <!-- motivation -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        motivation
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item">upload text motivation</button>
+                        <button class="dropdown-item">upload video motivation</button>
+                        <button class="dropdown-item">upload audio motivation</button>
+                        <button class="dropdown-item">see motivations</button>
+                    </div>
+                  </div>
+               <!-- end of motivation -->
+                <button class="btn btn-primary">financial support</button>
+                <button class="btn btn-primary">history</button>
+               
+                <div class="request">
+                    <h1>you have no pending request</h1>
+                </div>
+
+                {% elif is_activated.status == 'disable' %}
+                 <!-- motivation -->
+                 <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        motivation
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item">upload text motivation</button>
+                        <button class="dropdown-item">upload video motivation</button>
+                        <button class="dropdown-item">upload audio motivation</button>
+                        <button class="dropdown-item">see motivations</button>
+                    </div>
+                  </div>
+               <!-- end of motivation -->
+                 <!-- entertainment -->
+                 <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        entertainment
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="">comedy videos</a>
+                        <a class="dropdown-item" href="">music</a>
+                        <a class="dropdown-item" href="">book library</a>
+                    </div>
+                  </div>
+                <!-- entertainment -->
+                <!-- desease -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        desease control
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item">natural remedy</button>
+                        <button class="dropdown-item">eye desease doctor</button>
+                        <button class="dropdown-item">breast cancer control</button>
+                    </div>
+                  </div>
+                <!-- desease -->
+                <!-- accessibility -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        accessibility
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item">text to speech</button>
+                        <button class="dropdown-item">power reader</button>
+                        <button class="dropdown-item">cash reader</button>
+                        <button class="dropdown-item">image to text</button>
+                    </div>
+                  </div>
+                <!-- accessibility -->
+                <!-- security -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        security
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item">police</button>
+                        <button class="dropdown-item">ambulance</button>
+                        <button class="dropdown-item">fire service</button>
+                    </div>
+                  </div>
+                <!-- security -->
+                <!-- btns -->
+                <div class="btn-group my-5" role="group" aria-label="useful buttons">
+                    <button type="button" class="btn btn-primary">errands request</button>
+                    <button type="button" class="btn btn-primary">health</button>
+                    <button type="button" class="btn btn-primary">transport services</button>
+                    <button type="button" class="btn btn-primary">legal aid</button>
+                    <button type="button" class="btn btn-primary">couselling</button>
+                </div>
+                <!-- btns -->
+                {% else %}
+                <li class="nav-item ml-2">
+                    <a class="nav-link">
+                        <span class="text-danger">your account is not activated please update your profile</span>
+                    </a>
+                </li>
+                {% endif %}
     </div>
+
 </main>
 <!-- end of dashboard page -->
 

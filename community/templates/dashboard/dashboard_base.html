@@ -27,25 +27,7 @@
         <div class="collapse navbar-collapse" id="navlinks">
             
             <ul class="navbar-nav ml-auto font-weight-bold">
-                {% if is_activated.status == 'volunteer' %}
-                <li class="nav-item ml-2">
-                    <a class="nav-link">
-                        <span>volunteer menu options</span>
-                    </a>
-                </li>
-                {% elif is_activated.status == 'disable' %}
-                <li class="nav-item ml-2">
-                    <a class="nav-link">
-                        <span>disabled menu options</span>
-                    </a>
-                </li>
-                {% else %}
-                <li class="nav-item ml-2">
-                    <a class="nav-link">
-                        <span class="text-danger">your account is not activated please update your profile</span>
-                    </a>
-                </li>
-                {% endif %}
+                
                 <li class="nav-item ml-2">
                     <a href="{% url 'home' %}" class="nav-link">Home</a>
                 </li>

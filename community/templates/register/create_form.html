@@ -4,15 +4,17 @@
 <!-- signup form -->
 <section class="login-form-section" style="padding: 10rem 0!important;">
   <!-- alert -->
-<div class="alert alert-warning alert-dismissible fade show alert-box" role="alert"> 
   {% for message in messages %}
+
+<div class="alert alert-warning alert-dismissible fade show alert-box" role="alert"> 
   {{message}}.
-  {% endfor %}
   You can now login <a href="{% url 'login_user' %}" class="btn btn-primary text-white">Login</a>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+  {% endfor %}
+
 <!-- end of alert -->
     <div class="box" style="width: 500px;">
       <div class="login-container">

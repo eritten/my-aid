@@ -7,20 +7,21 @@ Create Profile
 
 <!-- profile update form -->
 <section class="login-form-section" style="padding: 10rem 0!important">
+{% if messages %}
   <div class="alert alert-warning alert-dismissible fade show" role="alert"> 
     {% for message in messages %}
       {{message}}. visit your <a href="{% url 'dashboard' %}" class="btn btn-primary">dashboard</a>
-    {% endfor %}
-    <a href="{% url 'create_profile' %}">Update profile</a>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+    {% endfor %}
+{% endif %}
 
     <div class="box" style="width: 500px;">
       <div class="login-container">
         <div class="form p-2">
-          <h2 class="mx-auto d-block text-uppercase mb-0 text-muted">create your account</h2>
+          <h2 class="mx-auto d-block text-uppercase mb-0 text-muted">create your acprofile</h2>
           <form class="login-form" action="{% url 'create_profile' %}" method="POST" id="sign-up-form">
               {% csrf_token %}
             <div class="inputBox">
@@ -29,7 +30,7 @@ Create Profile
             <div class="inputBox">
                 <input type="submit" class="text-white" value="Create profile" />
             </div>
-            <p class="forget">Already have an account? <a href="{% url 'login_user' %}">Log in</a></p>
+            
           </form>
         </div>
       </div>

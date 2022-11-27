@@ -9,7 +9,7 @@
         {# #}
         {% else %}
         <div class="alert alert-warning alert-dismissible fade show" role="alert"> 
-            <p><strong>You have not activated your profile.</strong> Update your profile <br/>
+            <p><strong>You have not created your profile.</strong> Update your profile <br/>
             <a href="{% url 'create_profile' %}">Update profile</a>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -17,6 +17,7 @@
           </div>
        
         {% endif %}
+
         {% if is_activated.status == 'volunteer' %}
                 <!-- motivation -->
                 <div class="btn-group">
@@ -113,7 +114,7 @@
                 {% else %}
                 <li class="nav-item ml-2">
                     <a class="nav-link">
-                        <span class="text-danger">your account is not activated please update your profile</span>
+                        <span class="text-danger">Create profile</span>
                     </a>
                 </li>
                 {% endif %}

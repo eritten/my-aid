@@ -61,21 +61,6 @@
     border: 1px solid rgba(255,255,255,.5);
     border-right: 1px solid rgba(255,255,255,.2);
     border-bottom: 1px solid rgba(255,255,255,.2);
-    animation: animate 10s linear infinite;
-    -webkit-animation: animate 10s linear infinite;
-    -o-animation: animate 10s linear infinite;
-    -ms-animation: animate 10s linear infinite;
-    -moz-animation: animate 10s linear infinite;
-    animation-delay: calc(-1s * var(--i));
-}
-/* animation for animate */
-@keyframes animate {
-    0% {
-        transform: translateY(-40px);
-    }
-    50% {
-        transform: translateY(40px);
-    }
 }
 .login-form-section .box .circle:nth-child(1) {
     top: -50px;

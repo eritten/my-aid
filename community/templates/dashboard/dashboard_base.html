@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <meta name="description" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus incidunt modi placeat quisquam nihil labore mollitia! Cumque voluptatibus optio delectus eaque voluptas eos laudantium! Tenetur veniam voluptas fuga eligendi perspiciatis?">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/import.css' %}">
@@ -43,6 +44,29 @@
                 <li class="nav-item ml-2">
                     <button onclick="window.open('http://localhost:8000/app/dashboard/')" class="nav-link btn btn-primary text-white px-2 mb-2 mb-md-0">{{request.user.first_name}} Dashboard</button>
                 </li>
+=======
+    <title>{{request.user.first_name}} Dashboard</title>
+</head>
+<body>
+{% if is_activated.status == 'volunteer' %}
+<span>volunteer nav</span>
+{% elif is_activated.status == 'disable' %}
+<span>disable nav </span>
+{%  else %}
+<span>empty</span>
+{% endif %}
+
+{% if is_activated.status == 'volunteer' %}
+<span>volunteer menu options</span>
+{% elif is_activated.status == 'disable' %}
+<span>disabled menu options</span>
+{% else %}
+<span>empty</span>
+{% endif %}
+
+
+    {% block content %}
+>>>>>>> 9ac8a176cd17a059722927f4a980f73cabe78caf
 
                 {% else %}
 <li class="nav-item ml-2">
@@ -60,6 +84,7 @@
     <!-- end of nav -->
     {% block content %}
     {% endblock %}
+<<<<<<< HEAD
     <!-- <!// footer bar //> -->
     <footer class="site-footer">
         <div class="container">
@@ -129,5 +154,8 @@
     <script src="{% static 'js/aos.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/dashboard.js' %}"></script>
+=======
+<!// general footer //>s
+>>>>>>> 9ac8a176cd17a059722927f4a980f73cabe78caf
 </body>
 </html>

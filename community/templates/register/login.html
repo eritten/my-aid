@@ -21,7 +21,7 @@ Login
           <form class="login-form" action="{% url 'login_user' %}" method="POST">
     {% csrf_token %}
             <div class="inputBox">
-              <input type="text"  name="name" placeholder="username" required>
+              <input type="text"  name="name" placeholder="username / email" required>
             </div>
             <div class="inputBox">
               <input type="password" placeholder="password" name="password" required>
@@ -32,9 +32,16 @@ Login
             <p class="forget">forgot password? <button class="reset-btn">click here</button></p>
             <p class="forget">don't have an account?<a href="{% url 'create_account' %}">sign up</a></p>
           </form>
-          {% for message in messages %}
-        {{message}}.
-        {% endfor %}
+<!-- alert -->
+          <div class="alert alert-warning alert-dismissible fade show alert-box" role="alert"> 
+            {% for message in messages %}
+            {{message}}. Your username / email / password is invalid
+            {% endfor %}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- end of alert -->
         </div>
       </div>
     </div>

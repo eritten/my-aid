@@ -99,6 +99,12 @@ video {
 #sign-up-form input {
     background: rgba(0, 0, 0, .3);
 }
+.alert-box {
+    position: fixed;
+    top: 5rem;
+    right: 2rem;
+    z-index: 100;
+}
 @media (max-width: 768px) {
     .img-bg-section {
         background-size: cover;

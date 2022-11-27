@@ -3,7 +3,18 @@
 Logout 
 {% endblock %}
 {% block content %}
-<h1>Logout success {{user}}</h1>
-You can login again <a href="{% url 'login_user' %}">Login</a>
+<div class="container py-5" style="padding-top: 6rem!important;">
+    <!-- alert -->
+    <div class="alert alert-warning alert-dismissible fade show alert-box" role="alert"> 
+        <h1>Logout success, {{user}}</h1>
+        You can login again <a href="{% url 'login_user' %}" class="btn btn-secondary text-white">Login</a>
+        or go to <a href="{% url 'home' %}" class="btn btn-primary text-white">Home</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- end of alert -->
+
+</div>
 
 {% endblock %}

@@ -4,9 +4,19 @@
 <!-- dashboard page -->
 <main class="home-page py-5">
     <div class="container py-5">
-        <!-- dashboard items -->
-
-        <!-- end of dashboard items -->
+        
+        {% if is_activated %}
+        {# #}
+        {% else %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+            <p><strong>You have not activated your profile.</strong> Update your profile <br/>
+            <a href="{% url 'create_profile' %}">Update profile</a>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+       
+        {% endif %}
     </div>
 </main>
 <!-- end of dashboard page -->

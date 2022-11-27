@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>{{request.user.first_name}} Dashboard</title>
 </head>
 <body>
+{% if is_activated.status == 'volunteer' %}
+<span>volunteer nav</span>
+{% elif is_activated.status == 'disable' %}
+<span>disable nav </span>
+{%  else %}
+<span>empty</span>
+{% endif %}
+
+{% if is_activated.status == 'volunteer' %}
+<span>volunteer menu options</span>
+{% elif is_activated.status == 'disable' %}
+<span>disabled menu options</span>
+{% else %}
+<span>empty</span>
+{% endif %}
+
+
     {% block content %}
 
     {% endblock %}
+<!// general footer //>s
 </body>
 </html>

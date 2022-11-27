@@ -29,8 +29,13 @@ Login
             <div class="inputBox">
               <input type="submit" value="LOGIN">
             </div>
+<<<<<<< HEAD
             <p class="forget">forgot password? <button class="reset-btn">click here</button></p>
             <p class="forget">don't have an account? <a href="#create-account" onclick="window.open('http://localhost:8000/app/create-account')">sign up</a></p>
+=======
+            <p class="forget">forgot password? <a href="#n">click here</a></p>
+            <p class="forget">don't have an account? <a href="{% url 'create_account' %}">sign up</a></p>
+>>>>>>> 526cc63fe61bea596b9fcd70d07e477a05fc2000
           </form>
           {% for message in messages %}
         {{message}}.

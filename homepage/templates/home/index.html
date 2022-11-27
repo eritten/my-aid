@@ -1,4 +1,5 @@
 {% extends "base_home.html" %}
+{% load static %}
 {% block content %}
 <main class="home-page">
 <!-- welcome header -->
@@ -10,12 +11,12 @@
 
           <div class="shadow p-5 header-box">
             <div class="block-heading-1">
-              <span class="d-block mb-3">Welcome To sewonet</span>
-              <h1 class="mb-4 blue display-4">We Care For people with disabilities</h1>
+              <span class="d-block mb-3" data-aos="fade-up">Welcome To sewonet</span>
+              <h1 class="mb-4 blue display-4" data-aos="fade-up" data-aos-delay="100">We Care For people with disabilities</h1>
             </div>
             
-            <p class="mb-4" style="line-height: 1.7;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet quod modi, eius minus hic illum perspiciatis! Voluptate facere tempore, libero enim fugit, temporibus non dolor nostrum iure ad. Dolorem, explicabo!</p>
-            <p><a href="#" class="btn btn-primary text-white py-3 px-5">Contact Us</a></p>
+            <p class="mb-4" style="line-height: 1.7;" data-aos="fade-up" data-aos-delay="200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet quod modi, eius minus hic illum perspiciatis! Voluptate facere tempore, libero enim fugit, temporibus non dolor nostrum iure ad. Dolorem, explicabo!</p>
+            <p><a href="#" class="btn btn-primary text-white py-3 px-5" data-aos="fade-up" data-aos-delay="300">Contact Us</a></p>
           </div>
         </div>
       </div>
@@ -31,14 +32,14 @@
         <div class="col-12">
           <div class="block-heading-1">
             <span>All Kind Of Services</span>
-            <h2>Dental Services</h2>
+            <h2>Assist Services</h2>
           </div>
         </div>
       </div>
       <div class="row ps">
         <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up">
           <div class="block-feature-1">
-            <span class="icon">
+            <span class="icon" tabindex="0" aria-label="blind person image">
               <span class="fas fa-blind img"></span>
             </span>
             <h2 class="text-black">blind people</h2>
@@ -48,7 +49,7 @@
 
         <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="100">
           <div class="block-feature-1">
-            <span class="icon">
+            <span class="icon" tabindex="0" aria-label="wheelchair image">
                 <span class="fas fa-wheelchair img"></span>
             </span>
             <h2 class="text-black">crippled people</h2>
@@ -58,7 +59,7 @@
 
         <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="200">
           <div class="block-feature-1">
-            <span class="icon">
+            <span class="icon" tabindex="0" aria-label="crutch image">
                 <span class="fas fa-crutch img"></span>
             </span>
             <h2 class="text-black">people with crutches</h2>
@@ -88,7 +89,7 @@
 
         <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="200">
           <div class="block-feature-1">
-            <span class="icon">
+            <span class="icon" tabindex="0" aria-label="blind person image">
                 <span class="fas fa-blind img"></span>
             </span>
             <h2 class="text-black">Patient Records</h2>
@@ -100,6 +101,153 @@
   </div>
 
 <!-- end of services section -->
+<!-- about section -->
+<div class="site-section gradient-bg-1" id="about-section">
+  <div class="container">
+    <div class="row justify-content-center mb-4 block-img-video-1-wrap">
+      <div class="col-8 mb-5">
+        <figure class="block-img-video-1" data-aos="fade">
+          <a href="#n" class="shadow" id="vid-btn">
+            <span class="icon play">
+              <span class="fas fa-play play-icon"></span>
+            </span>
+            <img src="{% static 'img/dis-1.jpg' %}" loop alt="woman pushing old man in wheel chair" class="img-fluid" id="dis-vid">
+          </a>
+        </figure>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-6 mb-4 col-lg-0 col-lg-3">
+            <div class="block-counter-1" data-aos="fade-up" data-aos-delay="100">
+              <span class="number"><span data-number="8">4</span>+</span>
+              <span class="caption">Year of Experience</span>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4 col-lg-0 col-lg-3">
+            <div class="block-counter-1" data-aos="fade-up" data-aos-delay="200">
+              <span class="number"><span data-number="15">20</span>+</span>
+              <span class="caption">Friends of the disabled</span>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4 col-lg-0 col-lg-3">
+            <div class="block-counter-1" data-aos="fade-up" data-aos-delay="300">
+              <span class="number"><span data-number="320">50</span>+</span>
+              <span class="caption">Health Sections</span>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4 col-lg-0 col-lg-3">
+            <div class="block-counter-1" data-aos="fade-up" data-aos-delay="400">
+              <span class="number"><span data-number="1500">400</span>+</span>
+              <span class="caption">Happy Smiles</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of about section -->
+<!-- our team section -->
+<div class="site-section" id="team-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="block-heading-1">
+          <span>sewonet company</span>
+          <h2>Meet Our Team</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0" data-aos="fade-up">
+        <div class="block-team-member-1 text-center rounded" tabindex="0">
+          <figure>
+            <img src="{% static 'img/me-1.webp' %}" alt="Image" class="img-fluid rounded-circle">
+          </figure>
+          <h3 class="font-size-20 text-black">Eritten Gyau</h3>
+          <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">CEO, co-fouder</span>
+          <p class="px-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, repellat. At, soluta. Repellendus vero, consequuntur!</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+        <div class="block-team-member-1 text-center rounded" tabindex="0">
+          <figure>
+            <img src="{% static 'img/me-2.webp' %}" alt="Image" class="img-fluid rounded-circle">
+          </figure>
+          <h3 class="font-size-20 text-black">Felix Aceampong</h3>
+          <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">Front-end, co-founder</span>
+          <p class="px-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quia veritatis, nam quam obcaecati fuga.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+        <div class="block-team-member-1 text-center rounded" tabindex="0">
+          <figure>
+            <img src="{% static 'img/me-3.webp' %}" alt="Image" class="img-fluid rounded-circle">
+          </figure>
+          <h3 class="font-size-20 text-black">Joel Acheampong</h3>
+          <span class="d-block font-gray-5 letter-spacing-1 text-uppercase font-size-12 mb-3">UI, co-founder</span>
+          <p class="px-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quidem, laudantium, illum minus numquam voluptas?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end of our team section -->
+<!-- contact section -->
+<div class="site-section bg-light" id="contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <div class="block-heading-1">
+          <span>Get In Touch</span>
+          <h2>Contact Us</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 mb-5">
+        <form action="#" method="post">
+          <div class="form-group row">
+            <div class="col-md-6 mb-4 mb-lg-0">
+              <input type="text" class="form-control" placeholder="First name" data-aos="fade-up">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="First name" data-aos="fade-up" data-aos-delay="100">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-12">
+              <input type="text" class="form-control" placeholder="Email address" data-aos="fade-up" data-aos-delay="200">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-12">
+              <textarea name="" id="" class="form-control" placeholder="Write your message." cols="30" rows="10" style="resize: none!important;" data-aos="fade-up" data-aos-delay="300"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-6 ml-auto">
+              <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="Send Message" data-aos="fade-up" data-aos-delay="400">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-4 ml-auto">
+        <h2 class="text-black">Need to call us?</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, distinctio! Harum quibusdam nisi, illum nulla aspernatur aut quidem aperiam, quae non tempora recusandae voluptatibus fugit impedit. you can call us on <a href="tel:+233244123123"> +233 244 123 123</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end of contact section -->
 </main>
 
 

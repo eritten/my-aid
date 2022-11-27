@@ -30,7 +30,7 @@ Login
               <input type="submit" value="LOGIN">
             </div>
             <p class="forget">forgot password? <a href="#n">click here</a></p>
-            <p class="forget">don't have an account? <a href="#n">sign up</a></p>
+            <p class="forget">don't have an account? <a href="{% url 'create_account' %}">sign up</a></p>
           </form>
           {% for message in messages %}
         {{message}}.

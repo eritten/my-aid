@@ -40,12 +40,19 @@
                 <li class="nav-item ml-2">
                     <a href="#contact-section" class="nav-link">Contact</a>
                 </li>
+{% if request.user.is_authenticated %}
                 <li class="nav-item ml-2">
                     <button onclick="window.open('http://localhost:8000/app/create-account')" class="nav-link btn btn-primary text-white px-2 mb-2 mb-md-0">Create Account</button>
                 </li>
                 <li class="nav-item ml-2">
                     <button onclick="window.open('http://localhost:8000/app/login')" class="nav-link btn btn-secondary text-white px-2">login</button>
                 </li>
+{% else %}
+                <li class="nav-item ml-2">
+                    <button onclick="window.open('http://localhost:8000/app/dashboard/')" class="nav-link btn btn-primary text-white px-2 mb-2 mb-md-0">{{request.user.first_name}} Dashboard</button>
+                </li>
+
+{% endif %}
             </ul>
         </div>
     

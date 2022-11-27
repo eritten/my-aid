@@ -15,7 +15,7 @@ Login
       <div class="circle" style="--i:2"></div>
       <div class="circle" style="--i:3"></div>
       <div class="circle" style="--i:4"></div>
-      <div class="container">
+      <div class="login-container">
         <div class="form">
           <h2>Login Form</h2>
           <form class="login-form" action="{% url 'login_user' %}" method="POST">
@@ -29,8 +29,8 @@ Login
             <div class="inputBox">
               <input type="submit" value="LOGIN">
             </div>
-            <p class="forget">forgot password? <a href="#n">click here</a></p>
-            <p class="forget">don't have an account? <a href="#n">sign up</a></p>
+            <p class="forget">forgot password? <button class="reset-btn">click here</button></p>
+            <p class="forget">don't have an account? <a href="#create-account" onclick="window.open('http://localhost:8000/app/create-account')">sign up</a></p>
           </form>
           {% for message in messages %}
         {{message}}.

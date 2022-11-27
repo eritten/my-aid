@@ -73,5 +73,6 @@ def dashboard(request):
 
 @login_required
 def logout_user(request):
+    user = request.user.first_name
     logout(request)
-    return render(request, 'register/logout.html')
+    return render(request, 'register/logout.html', {"user": user})

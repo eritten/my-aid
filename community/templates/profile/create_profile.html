@@ -1,4 +1,8 @@
 {% extends "base_user.html" %}
+{% block title %}
+Create Profile
+{% endblock %}
+
 {% block content %}
 <br/>
 
@@ -11,4 +15,8 @@
 <input type="submit" value="Create profile" />
 
 </form>
+{% for message in messages %}
+{{message}}.
+{% endfor %}
+
 {% endblock %}

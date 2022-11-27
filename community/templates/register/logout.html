@@ -1,1 +1,9 @@
-<h1>Logout success</h1>
+{% extends 'base_user.html' %}
+{% block title %}
+Logout 
+{% endblock %}
+{% block content %}
+<h1>Logout success {{user}}</h1>
+You can login again <a href="{% url 'login_user' %}">Login</a>
+
+{% endblock %}

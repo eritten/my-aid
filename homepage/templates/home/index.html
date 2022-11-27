@@ -3,7 +3,13 @@
 <h1>Home page</h1>
 <br/>
 <br/>
+{% if request.user.is_authenticated %}
+<button onclick="window.open('http://localhost:8000/app/dashboard/')">Go to your dashboard {{request.user.first_name}}.</button>
+
+{% else %}
 
 <button onclick="window.open('http://localhost:8000/app/create-account')">Create Account</button>
+<button onclick="window.open('http://localhost:8000/app/login/')">Login</button>
+{% endif %}
 
 {% endblock %}

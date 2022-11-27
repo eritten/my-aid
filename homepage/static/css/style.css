@@ -96,8 +96,9 @@ video {
     cursor: pointer;
     background: none;
 }
+#id_about,
 #sign-up-form input {
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .5)!important;
 }
 @media (max-width: 768px) {
     .img-bg-section {

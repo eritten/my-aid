@@ -1,17 +1,15 @@
 {% extends 'dashboard/dashboard_base.html' %}
+{% load static %}
 {% block content %}
-<h1>Welcome {{request.user.username}}</h1>
+<!-- dashboard page -->
+<main class="home-page py-5">
+    <div class="container py-5">
+        <!-- dashboard items -->
 
-<a href="{% url 'logout_user' %}">LOGOUT</a>
-
-{% if is_activated %}
-{# #}
-{% else %}
-<h1>not activated</h1>
-<p>Update your profile <br/>
-<a href="{% url 'create_profile' %}">Update profile</a>
-
+        <!-- end of dashboard items -->
+    </div>
+</main>
+<!-- end of dashboard page -->
 
 
-{% endif %}
 {% endblock %}

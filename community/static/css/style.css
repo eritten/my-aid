@@ -1,7 +1,7 @@
 :root {
     --gradient-1: linear-gradient(to bottom, #51eaea 0%, #499bea 100%);;
     --blue: #51eaea;
-    --Deepblue: #024d4d;
+    --Deepblue: #024d4d; 
 }
 html {
     scroll-behavior: smooth;

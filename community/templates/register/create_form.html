@@ -1,12 +1,9 @@
 {% extends "base_home.html" %}
 {% block content %}
-
+ 
 <!-- signup form -->
-<section class="login-form-section" style="padding: 34rem 0!important">
-    <!-- <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div> -->
-    <div class="box">
+<section class="login-form-section" style="padding: 10rem 0!important;">
+    <div class="box" style="width: 500px;">
       <div class="login-container">
         <div class="form p-2">
           <h2 class="mx-auto d-block text-uppercase mb-0 text-muted">create your account</h2>
@@ -18,7 +15,7 @@
             <div class="inputBox">
               <input type="submit" value="SIGN UP">
             </div>
-            <p class="forget">Already have an account? <a href="#create-account" onclick="window.open('http://localhost:8000/app/login')">Log in</a></p>
+            <p class="forget">Already have an account? <a href="{% url 'login_user' %}">Log in</a></p>
           </form>
         </div>
       </div>

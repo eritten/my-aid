@@ -1,8 +1,9 @@
-{% extends "base_user.html" %}
+{% extends "base_home.html" %}
 {% block content %}
 <h1>Hello create your account</h1>
 {% for message in messages %}
 {{message}}.
+You can now login <a href="{% url 'login_user' %}">Login</a>
 
 {% endfor %}
 <br/>

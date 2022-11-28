@@ -67,7 +67,8 @@ def dashboard(request):
         is_activated = Profile.objects.filter(user__username=request.user.username)[0]
     except:
         pass
-
+    request.session['name'] = request.user.first_name
+    request.session['name'] = 'room'
     return render(request, 'dashboard/dashboard.html', {'is_activated': is_activated})
 
 

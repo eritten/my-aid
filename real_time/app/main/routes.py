@@ -6,15 +6,16 @@ from .forms import LoginForm
 @main.route('/', methods=['GET', 'POST'])
 def index():
     """Login form to enter a room."""
-    form = LoginForm()
-    if form.validate_on_submit():
-        session['name'] = form.name.data
-        session['room'] = form.room.data
+    name = request.args.get("name")
+    room_name = request.args.get("room_name")
+    if request.method == "POST":
+        session['name'] = name
+        session['room'] = room_name
         return redirect(url_for('.chat'))
-    elif request.method == 'GET':
-        form.name.data = session.get('name', '')
-        form.room.data = session.get('room', '')
-    return render_template('index.html', form=form)
+#    elif request.method == 'GET':
+#        form.name.data = session.get('name', '')
+#        form.room.data = session.get('room', '')
+    return render_template('index.html', name=name, room_name=room_name)
 
 
 @main.route('/chat')

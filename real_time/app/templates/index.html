@@ -4,12 +4,9 @@ My aid chat Home
 {% endblock %}
 {% block content %}
     <body>
-        <h1>Welcome to My aid chat rooms for motivation and counselling</h1>
+        <h1>Welcome to My aid chat rooms for motivation and counselling.</h1>
         <form method="POST">
-            {{ form.hidden_tag() }}
-            {{ form.name.label }}: {{ form.name() }} {% for error in form.name.errors %}{{ error }}{% endfor %}<br>
-            {{ form.room.label }}: {{ form.room() }} {% for error in form.room.errors %}{{ error }}{% endfor %}<br>
-            {{ form.submit() }}
+<input type="submit" value="Enter room" />
         </form>
     </body>
 {% endblock %}

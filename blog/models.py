@@ -8,6 +8,7 @@ from comment.models import Comment
 from markdownfield.models import MarkdownField, RenderedMarkdownField
 from markdownfield.validators import VALIDATOR_STANDARD
 from django.contrib.contenttypes.fields import GenericRelation
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -31,4 +32,6 @@ class Blog(models.Model):
         return self.title
     def get_absolute_url(self):
         return reverse('detail', args=(self.pk, self.slug, self.created_at.year, self.created_at.month, self.created_at.day))
+
+
 

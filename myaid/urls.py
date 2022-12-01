@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+#path('det/', index, name='index'),
 path('comment/', include('comment.urls')),
 path('', views.home, name='home'),
 path('blog/', include('blog.urls')),

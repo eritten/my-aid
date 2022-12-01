@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
 'homepage',
+#'home',
 'blog',
 'markdownfield',
 'embed_video',

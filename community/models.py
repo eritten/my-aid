@@ -11,6 +11,7 @@ from markdownfield.models import MarkdownField, RenderedMarkdownField
 from markdownfield.validators import VALIDATOR_STANDARD
 from django.contrib.contenttypes.fields import GenericRelation
 from django.contrib.auth.models import User
+from django.utils.timezone import now
 
 # Create your models here.
 VOLUNTEER_TYPE = (("not a volunteer", "not a volunteer"), ('GENRAL', 'GENERAL'), ('HEALTH', 'HEALTH'), ('BANKING', 'BANKING'), ('LEGAL RIGHT', 'LEGAL RIGHT'), ('MESSENGER', 'MESSENGER'), ('COUNCELLER', 'COUNCELLER'), ('TRANSPORT', 'TRANSPORT'))
@@ -57,3 +58,8 @@ class Topic(models.Model):
         return self.title
     def get_absolute_url(self):
         reverse('topic', args=(self.pk, self.user.username, self.slug))
+
+class Order(models.Model):
+    user = models.ManyToManyField(User, related_name='order', null=True, blank=True)
+    message = models.TextField()
+    date = models.DateField(default=now)

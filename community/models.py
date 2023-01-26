@@ -63,3 +63,5 @@ class Order(models.Model):
     user = models.ManyToManyField(User, related_name='order', blank=True)
     message = models.TextField()
     date = models.DateField(default=now)
+    lat = models.CharField(max_length=100)
+    long = models.CharField(max_length=100)

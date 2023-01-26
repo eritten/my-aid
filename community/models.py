@@ -23,7 +23,7 @@ DISABILITY_TYPE = (("VISUALLY IMPAIRMENT", "VISUALLY IMPAIRMENT"), ("PHYSICALLY 
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    telephone_number = models.CharField(max_length=15, null =True, blank=True)
+    telephone_number = models.CharField(max_length=15,  blank=True)
     city = models.CharField(max_length=200, null=True, blank=True)
     country = models.CharField(max_length=200, null=True, blank=True)
     sex = models.CharField(max_length=10, choices=(('male', 'male'), ('female', 'female')), null =True, blank=True)
@@ -60,6 +60,6 @@ class Topic(models.Model):
         reverse('topic', args=(self.pk, self.user.username, self.slug))
 
 class Order(models.Model):
-    user = models.ManyToManyField(User, related_name='order', null=True, blank=True)
+    user = models.ManyToManyField(User, related_name='order', blank=True)
     message = models.TextField()
     date = models.DateField(default=now)

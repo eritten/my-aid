@@ -19,7 +19,7 @@ class MakeOrder(WebsocketConsumer):
         self.req = Order.objects.create(message=text_message)
 
     def order(self, event):
-        self.send(json.dumps({"message": event['message'], "request_id": self.req_id}))
+        self.send(json.dumps({"message": event['message'], "request_id": self.req.req_id}))
 
 class AcceptRequest(WebsocketConsumer):    
     def connect(self):

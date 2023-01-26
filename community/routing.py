@@ -1,4 +1,4 @@
 from django.urls import path
-from .consumers import Order
+from .consumers import MakeOrder
 
-websocket_url_patterns = [path('order/', Order.as_asgi(), name='order')]
+websocket_url_patterns = [path('order/', MakeOrder.as_asgi(), name='order')]

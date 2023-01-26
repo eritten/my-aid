@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-'daphne',
+#'daphne',
 'homepage',
 #'home',
 'blog',
@@ -100,7 +100,7 @@ DATABASES = {
 
 # setting asgi application
 
-ASGI_APPLICATION = "myaid.asgi.application"
+#ASGI_APPLICATION = "myaid.asgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [

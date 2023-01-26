@@ -5,5 +5,5 @@ from community.routing import Order
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myaid.settings')
 
-application = ProtocolTypeRouter({"http": get_asgi_application(), "websocket": URLRouter(websocket_url_patterns)}
+application = ProtocolTypeRouter({"http": get_asgi_application()}
 )
